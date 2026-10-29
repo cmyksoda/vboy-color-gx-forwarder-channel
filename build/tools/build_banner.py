@@ -25,7 +25,7 @@ import banner_model as M
 import banner_scene as BS
 import build_splash as SP
 import tpl as T
-from build_icon import (ci_tpl, keys_linear, make, pairs, palette_of, pane as apane, pane_block, pic_block, quant_tpl,
+from build_icon import (ci_tpl, keys_linear, make, pairs, palette_of, pane as apane, pic_block, quant_tpl,
                         set_field, set_size, set_xy, tag, triplets, entry)
 from render import rip, set_mag_nearest
 from tex import ci8_sprite_tpl
@@ -150,12 +150,6 @@ def insert_into(xml, parent, block):
     j = xml.index('<tag type="pas1" />', i)
     j = xml.index("\n", j) + 1
     return xml[:j] + block + xml[j:]
-
-
-def insert_before(xml, anchor_name, block, kind="pan1"):
-    i = xml.index(f'<tag type="{kind}" name="{anchor_name}"')
-    i = xml.rindex("\n", 0, i) + 1
-    return xml[:i] + block + xml[i:]
 
 
 def insert_materials(xml, blocks):
@@ -395,7 +389,7 @@ def build(design, out_path=None):
 
     cc = Image.open(CONTROLLER).convert("RGBA")
     files["Controller.tpl"], _ = ci8_sprite_tpl(cc)
-    xml = edit_pan(xml, "ControllerPane", tr=px(*CONTROLLER_AT), rot=8.0, flag="00")
+    xml = edit_pan(xml, "ControllerPane", tr=px(*CONTROLLER_AT), rot=8.0, flag="01")
     xml = edit_pic(xml, "ControllerPicture", size=cc.size, tr=(0.0, 0.0))
     xml = edit_material(xml, "ControllerMaterial", texture="Controller.tpl")
 
@@ -403,22 +397,11 @@ def build(design, out_path=None):
     lc = Image.new("RGBA", (ceil(logo.width, 8), ceil(logo.height, 4)))
     lc.alpha_composite(logo, ((lc.width - logo.width) // 2, (lc.height - logo.height) // 2))
     files["Logo.tpl"], _ = ci8_sprite_tpl(lc)
-    xml = edit_pan(xml, "LogoPane", tr=px(*LOGO_AT), flag="00")
+    xml = edit_pan(xml, "LogoPane", tr=px(*LOGO_AT), flag="01")
     xml = edit_pic(xml, "LogoPicture", size=lc.size, tr=(0.0, 0.0))
     xml = edit_material(xml, "LogoMaterial", texture="Logo.tpl")
-    # the controller and the logo share one group that keeps its proportions in 16:9, so the Menu's
-    # widescreen spread can't pull them apart
-    pieces = ""
-    for name in ("ControllerPane", "LogoPane"):
-        a_, b_ = pane_block(xml, name)
-        pieces += xml[a_:b_]
-        xml = xml[:a_] + xml[b_:]
-    group = (pan_xml("ChromePane", adjust="01", influence="01") + '\t\t\t<tag type="pas1" />\n' + pieces
-             + '\t\t\t<tag type="pae1" />\n')
-    xml = insert_before(xml, "TitlePane", group)
     files["TitleBar.tpl"] = arc.get("arc/timg/TitleBar.tpl")
     blk = material_block(xml, "TitleBarMaterial")
-    # Tantric's tab, in VB colors: VBoy Color red, and the edge line (the texture's black rows) in black
     tab = re.sub(
         r'<backcolor r="\d+" g="\d+" b="\d+" a="\d+" />', '<backcolor r="%d" g="%d" b="%d" a="255" />' % DEEP_RED, blk
     )
