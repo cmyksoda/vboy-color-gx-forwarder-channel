@@ -1,0 +1,61 @@
+{
+  "name": "wario",
+  "character": "Wario",
+  "game": "Virtual Boy Wario Land (Japan, USA)",
+  "rom": "Virtual Boy Wario Land (Japan, USA).vb",
+  "facing": "right, as the game draws it (no mirroring)",
+  "colors": "harness-tags colorMode 0 (Game's own), color packs enabled; pixels are the emulator's output, nothing repainted",
+  "script": "build/scripts/cast-wario-menu.txt",
+  "scene": "file select (castle hall with the save doors), RIGHT held from frame 1500; Wario walks door to door on a flat stone floor",
+  "frames": "1526-1549 (the second walk cycle). Frames 1550-1569 repeat cels 1-5 pixel-identically (he stops before cel 6 comes round again); frames 1505-1525 differ only in the 8x8 eye tile while Wario blinks (1513-1520)",
+  "canvas": {
+    "width": 41,
+    "height": 51,
+    "anchor_x": 20,
+    "alignment": "feet on the bottom row; x as the game places each cel relative to Wario's position (head OBJ at column anchor_x)"
+  },
+  "cycle_frames": 24,
+  "speed_px_per_frame": 4,
+  "speed_note": "4 px/frame on the file select; 2 px/frame in level 1 (same cels, same 4-frame timing)",
+  "cels": [
+    {
+      "file": "wario-1.png",
+      "hold_frames": 4,
+      "game_frames": "1526-1529",
+      "game_dy": 1
+    },
+    {
+      "file": "wario-2.png",
+      "hold_frames": 4,
+      "game_frames": "1530-1533",
+      "game_dy": 0
+    },
+    {
+      "file": "wario-3.png",
+      "hold_frames": 4,
+      "game_frames": "1534-1537",
+      "game_dy": 2
+    },
+    {
+      "file": "wario-4.png",
+      "hold_frames": 4,
+      "game_frames": "1538-1541",
+      "game_dy": 1
+    },
+    {
+      "file": "wario-5.png",
+      "hold_frames": 4,
+      "game_frames": "1542-1545",
+      "game_dy": 0
+    },
+    {
+      "file": "wario-6.png",
+      "hold_frames": 4,
+      "game_frames": "1546-1549",
+      "game_dy": 2
+    }
+  ],
+  "game_dy_note": "px lower than the highest cel the game draws this cel (its walk bounce); the PNGs ignore it so every foot sits on the bottom row",
+  "palette_colors": 26,
+  "palette_note": "distinct opaque RGB colors across all cels of this character; every pixel is fully opaque or fully transparent"
+}

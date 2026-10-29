@@ -1,0 +1,50 @@
+{
+  "name": "jack",
+  "character": "Jack Frost (the first character on the select screen)",
+  "game": "Jack Bros. (USA)",
+  "rom": "Jack Bros. (USA).vb",
+  "facing": "right: the sprite the game shows while walking right. The game is top-down, so this is a three-quarter overhead view, not a profile",
+  "colors": "harness-tags colorMode 0 (Game's own), color packs enabled; pixels are the emulator's output, nothing repainted",
+  "script": "build/scripts/cast-jack-walk.txt",
+  "scene": "Floor 1: tutorial text cleared with A, DOWN from frame 2700, RIGHT held from frame 2770; walking right along the first corridor. Jack Frost is the default pick, no extra press",
+  "frames": "2772-2807 (one full cycle plus the start of the next; every frame of a cel is pixel-identical)",
+  "canvas": {
+    "width": 34,
+    "height": 40,
+    "alignment": "feet on the bottom row; all three cels have the same columns, so they play in place"
+  },
+  "cycle_frames": 32,
+  "speed_px_per_frame": 2.25,
+  "speed_note": "measured from the scrolling floor: 2,2,2,3 px on successive frames (the camera is locked to the character), so 18 px per cel",
+  "cels": [
+    {
+      "file": "jack-1.png",
+      "hold_frames": 8,
+      "game_dy": 0
+    },
+    {
+      "file": "jack-2.png",
+      "hold_frames": 8,
+      "game_dy": 1
+    },
+    {
+      "file": "jack-1.png",
+      "hold_frames": 8,
+      "game_dy": 0
+    },
+    {
+      "file": "jack-3.png",
+      "hold_frames": 8,
+      "game_dy": 1
+    }
+  ],
+  "unique_files": [
+    "jack-1.png",
+    "jack-2.png",
+    "jack-3.png"
+  ],
+  "cycle_note": "the cycle is cel 1, 2, 1, 3 (the first cel plays twice); entries repeat the file",
+  "game_dy_note": "px lower than the highest cel the game draws this cel; the PNGs ignore it so every foot sits on the bottom row",
+  "palette_colors": 10,
+  "palette_note": "distinct opaque RGB colors across all cels of this character; every pixel is fully opaque or fully transparent"
+}

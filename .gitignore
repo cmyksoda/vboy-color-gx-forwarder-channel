@@ -1,0 +1,27 @@
+# the channel ships only in the release zip
+*.wad
+
+# build output and scratch
+build/out/
+build/extracted/
+build/mock/
+build/dolphin/
+build/.venv/
+__pycache__/
+*.pyc
+
+# third-party inputs the build needs; see BUILDING.md for where to get them
+donor/
+build/tools/benzin/
+
+# notes and working data
+project-notes/
+project-data/
+
+# captures and research the build no longer reads (its inputs are in icon/ and banner/)
+build/host/
+build/cap/
+reference/
+
+*.bak
+*.zip

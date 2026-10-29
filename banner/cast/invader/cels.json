@@ -1,0 +1,38 @@
+{
+  "name": "invader",
+  "character": "Space Invader, crab (Space Invaders' medium invader, 2nd and 3rd rows)",
+  "game": "Space Invaders - Virtual Collection (Japan)",
+  "rom": "Space Invaders - Virtual Collection (Japan).vb",
+  "facing": "none (the invaders are symmetric; the formation marches right, then steps down and marches left)",
+  "colors": "harness-tags colorMode 0 (Game's own), color packs enabled; pixels are the emulator's output, nothing repainted",
+  "script": "build/scripts/cast-invaders-2d.txt",
+  "scene": "ORIGINAL 2D mode, first wave, all 55 invaders alive, first sweep to the right (menu: RIGHT at frame 510 selects ORIGINAL 2D)",
+  "frames": "1106-1215 (one full cycle; frames 1030-1340 checked, every trusted frame of a cel is pixel-identical)",
+  "canvas": {
+    "width": 11,
+    "height": 8,
+    "alignment": "exactly the invader's own 8-row tile area; both cels share the same columns, so they play in place"
+  },
+  "cycle_frames": 110,
+  "speed_px_per_frame": 0.0364,
+  "speed_note": "the invader moves 2 px every time its cel changes; with all 55 alive that is every 55 frames (it speeds up as invaders die)",
+  "step_intervals_observed": [
+    55,
+    55,
+    55,
+    55,
+    55
+  ],
+  "cels": [
+    {
+      "file": "invader-1.png",
+      "hold_frames": 55
+    },
+    {
+      "file": "invader-2.png",
+      "hold_frames": 55
+    }
+  ],
+  "palette_colors": 1,
+  "palette_note": "distinct opaque RGB colors across all cels of this character; every pixel is fully opaque or fully transparent"
+}

@@ -1,0 +1,343 @@
+{
+  "name": "ballom",
+  "character": "Ballom, called Drifty in the game: the balloon opponent of the first story stage (The Scary Ruins)",
+  "game": "Panic Bomber (USA)",
+  "rom": "Panic Bomber (USA).vb",
+  "facing": "front: he looks straight at you; a round balloon with a knot and a curling tail, floating in place",
+  "colors": "harness-tags colorMode 0 (Game's own), color packs enabled; pixels are the emulator's output, nothing repainted",
+  "script": "build/scripts/cast-ballom-a.txt",
+  "scene": "Story, first stage (The Scary Ruins), first match: the opponent's portrait between the two playfields. The script presses START and A through the menus and the story page; the last press ends at frame 1665 and the match opens (fade-in, READY!) at about 1720. No input in the loop",
+  "frames": "1739-2519: nine full cycles, every frame; every frame of a step, in every cycle, is pixel-identical. A sampled check (every third frame, 2520-6867) found the same 14 steps unchanged",
+  "loop_note": "the loop runs for the whole calm part of the match (to frame 6869 in this script). Then the player's field is nearly full: the drift stops, he bobs faster and laughs, and those face cels carry large color-pack artifacts (not captured)",
+  "canvas": {
+    "width": 56,
+    "height": 75,
+    "alignment": "the balloon body's top-left corner is the canvas origin in every cel (the body outline is rigid), so they play in place; shorter tails leave the bottom rows empty"
+  },
+  "cycle_frames": 84,
+  "cels": [
+    {
+      "file": "ballom-1.png",
+      "hold_frames": 6,
+      "game_dx": 2,
+      "game_dy": 4,
+      "screen_x": 167,
+      "screen_y": 60
+    },
+    {
+      "file": "ballom-2.png",
+      "hold_frames": 6,
+      "game_dx": 3,
+      "game_dy": 5,
+      "screen_x": 168,
+      "screen_y": 61
+    },
+    {
+      "file": "ballom-1.png",
+      "hold_frames": 6,
+      "game_dx": 4,
+      "game_dy": 4,
+      "screen_x": 169,
+      "screen_y": 60
+    },
+    {
+      "file": "ballom-3.png",
+      "hold_frames": 6,
+      "game_dx": 5,
+      "game_dy": 3,
+      "screen_x": 170,
+      "screen_y": 59
+    },
+    {
+      "file": "ballom-4.png",
+      "hold_frames": 6,
+      "game_dx": 6,
+      "game_dy": 2,
+      "screen_x": 171,
+      "screen_y": 58
+    },
+    {
+      "file": "ballom-5.png",
+      "hold_frames": 6,
+      "game_dx": 6,
+      "game_dy": 1,
+      "screen_x": 171,
+      "screen_y": 57
+    },
+    {
+      "file": "ballom-6.png",
+      "hold_frames": 6,
+      "game_dx": 5,
+      "game_dy": 1,
+      "screen_x": 170,
+      "screen_y": 57
+    },
+    {
+      "file": "ballom-1.png",
+      "hold_frames": 6,
+      "game_dx": 4,
+      "game_dy": 4,
+      "screen_x": 169,
+      "screen_y": 60
+    },
+    {
+      "file": "ballom-2.png",
+      "hold_frames": 6,
+      "game_dx": 3,
+      "game_dy": 5,
+      "screen_x": 168,
+      "screen_y": 61
+    },
+    {
+      "file": "ballom-7.png",
+      "hold_frames": 6,
+      "game_dx": 2,
+      "game_dy": 4,
+      "screen_x": 167,
+      "screen_y": 60
+    },
+    {
+      "file": "ballom-6.png",
+      "hold_frames": 6,
+      "game_dx": 1,
+      "game_dy": 2,
+      "screen_x": 166,
+      "screen_y": 58
+    },
+    {
+      "file": "ballom-4.png",
+      "hold_frames": 6,
+      "game_dx": 0,
+      "game_dy": 1,
+      "screen_x": 165,
+      "screen_y": 57
+    },
+    {
+      "file": "ballom-5.png",
+      "hold_frames": 6,
+      "game_dx": 0,
+      "game_dy": 0,
+      "screen_x": 165,
+      "screen_y": 56
+    },
+    {
+      "file": "ballom-6.png",
+      "hold_frames": 6,
+      "game_dx": 1,
+      "game_dy": 2,
+      "screen_x": 166,
+      "screen_y": 58
+    }
+  ],
+  "unique_files": [
+    "ballom-1.png",
+    "ballom-2.png",
+    "ballom-3.png",
+    "ballom-4.png",
+    "ballom-5.png",
+    "ballom-6.png",
+    "ballom-7.png"
+  ],
+  "cycle_note": "14 steps of 6 game frames (84 per cycle); entries repeat a file when the game reuses a cel",
+  "game_dx_dy_note": "the game also moves the whole balloon: game_dx is px right of the leftmost step, game_dy px lower than the highest; the PNGs ignore both. screen_x/screen_y are where the body's top-left corner sits on the 384x224 frame",
+  "blemishes": [
+    {
+      "file": "ballom-2.png",
+      "pixels": [
+        {
+          "x": 29,
+          "y": 70,
+          "rgb": [
+            40,
+            110,
+            60
+          ]
+        },
+        {
+          "x": 31,
+          "y": 70,
+          "rgb": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "x": 28,
+          "y": 71,
+          "rgb": [
+            102,
+            22,
+            62
+          ]
+        },
+        {
+          "x": 29,
+          "y": 71,
+          "rgb": [
+            40,
+            110,
+            60
+          ]
+        },
+        {
+          "x": 30,
+          "y": 71,
+          "rgb": [
+            255,
+            202,
+            232
+          ]
+        },
+        {
+          "x": 31,
+          "y": 71,
+          "rgb": [
+            232,
+            92,
+            162
+          ]
+        },
+        {
+          "x": 32,
+          "y": 71,
+          "rgb": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "x": 29,
+          "y": 72,
+          "rgb": [
+            102,
+            22,
+            62
+          ]
+        },
+        {
+          "x": 30,
+          "y": 72,
+          "rgb": [
+            40,
+            110,
+            60
+          ]
+        },
+        {
+          "x": 31,
+          "y": 72,
+          "rgb": [
+            255,
+            202,
+            232
+          ]
+        },
+        {
+          "x": 32,
+          "y": 72,
+          "rgb": [
+            232,
+            92,
+            162
+          ]
+        },
+        {
+          "x": 33,
+          "y": 72,
+          "rgb": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "x": 30,
+          "y": 73,
+          "rgb": [
+            102,
+            22,
+            62
+          ]
+        },
+        {
+          "x": 31,
+          "y": 73,
+          "rgb": [
+            232,
+            92,
+            162
+          ]
+        },
+        {
+          "x": 32,
+          "y": 73,
+          "rgb": [
+            255,
+            202,
+            232
+          ]
+        },
+        {
+          "x": 33,
+          "y": 73,
+          "rgb": [
+            4,
+            2,
+            2
+          ]
+        },
+        {
+          "x": 31,
+          "y": 74,
+          "rgb": [
+            102,
+            22,
+            62
+          ]
+        },
+        {
+          "x": 32,
+          "y": 74,
+          "rgb": [
+            102,
+            22,
+            62
+          ]
+        }
+      ]
+    },
+    {
+      "file": "ballom-3.png",
+      "pixels": [
+        {
+          "x": 26,
+          "y": 59,
+          "rgb": [
+            40,
+            34,
+            52
+          ]
+        }
+      ]
+    },
+    {
+      "file": "ballom-6.png",
+      "pixels": [
+        {
+          "x": 26,
+          "y": 59,
+          "rgb": [
+            40,
+            34,
+            52
+          ]
+        }
+      ]
+    }
+  ],
+  "blemish_note": "pixels the color pack paints outside the balloon's three colors, kept as drawn: 18 at the tail tip of ballom-2 (black, dark red, green, pink), and one night-sky colored pixel at the top left edge of the tail in ballom-3 and ballom-6",
+  "palette_colors": 10,
+  "palette_note": "distinct opaque RGB colors across all cels of this character; every pixel is fully opaque or fully transparent"
+}
