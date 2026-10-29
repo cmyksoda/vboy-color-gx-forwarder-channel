@@ -72,12 +72,12 @@ def pic_xml(name, mat, size, tr, vtx=None, uv=None, alpha="ff", scale=(1.0, 1.0)
             f'\t\t\t\t<coordinates>\n\t\t\t\t\t<set>\n{u}\t\t\t\t\t</set>\n\t\t\t\t</coordinates>\n\t\t\t</tag>\n')
 
 
-def pan_xml(name, tr=(0.0, 0.0), alpha="ff", adjust="00", influence="01"):
+def pan_xml(name, tr=(0.0, 0.0)):
     """A group pane. Benzin's <flag> is the Wii's location-adjust bit and <WidescreenAffected> is alpha
     inheritance: our groups live under CharacterPaneBase (already adjusted) and pass their alpha down."""
     return (f'\t\t\t<tag type="pan1" name="{name}" userdata="">\n\t\t\t\t<visible>01</visible>\n'
-            f'\t\t\t\t<WidescreenAffected>{influence}</WidescreenAffected>\n\t\t\t\t<flag>{adjust}</flag>\n'
-            f'\t\t\t\t<origin x="Center" y="Center" />\n\t\t\t\t<alpha>{alpha}</alpha>\n\t\t\t\t<padding>00</padding>\n'
+            f'\t\t\t\t<WidescreenAffected>01</WidescreenAffected>\n\t\t\t\t<flag>00</flag>\n'
+            f'\t\t\t\t<origin x="Center" y="Center" />\n\t\t\t\t<alpha>ff</alpha>\n\t\t\t\t<padding>00</padding>\n'
             f'\t\t\t\t<translate>\n\t\t\t\t\t<x>{tr[0]:.10f}</x>\n\t\t\t\t\t<y>{tr[1]:.10f}</y>\n'
             f'\t\t\t\t\t<z>0.0000000000</z>\n\t\t\t\t</translate>\n'
             f'\t\t\t\t<rotate>\n\t\t\t\t\t<x>0.00000000000000000000</x>\n\t\t\t\t\t<y>0.00000000000000000000</y>\n'
@@ -277,8 +277,7 @@ def build(design, out_path=None):
     # ---- the parade on Tantric's own conveyor and slots. Every walker and every invader has its own picture
     # and material in each copy, since the Menu gives a material's animation to only one pane.
     # walkers keep their exact 8-bit colors at 1x; a walker drawn bigger gets a picture exactly its scale times
-    # the texture and asks for nearest-neighbor filtering, in the layout and in the texture's own header (the
-    # Menu ignored the layout's bit on its own; whether it takes the header's is being checked in Dolphin)
+    # the texture and asks for nearest-neighbor filtering, in the layout and in the texture's own header
     tex_of, cels1, nearest = {}, BS.walker_cels(scaled=False), []
     for w_ in M.FRONT:
         for n in dict.fromkeys(w_.cycle):
